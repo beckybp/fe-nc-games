@@ -43,6 +43,21 @@ ul {
   list-style: none;
 }
 
+img {
+  width: 50vw;
+  border-radius: 0.5rem;
+  max-height: 40vh;
+  object-fit: cover;
+}
+
+button {
+  padding: 0.9em 1.3em;
+  background-color: #18d9b5;
+  border-radius: 20px;
+  border: none;
+  margin: 5px;
+}
+
 .review-list {
   width: 350px;
   margin: 0.5em;
