@@ -1,12 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  background-color: #f2f2f2;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  padding: 1rem;
+  color: #025159;
+  border-bottom: 2px solid #025159;
 }
 
+h1,
+h2,
+h3,
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  color: #025159;
+}
+
+h2 {
+  padding: 10px;
+  color: #025159;
+}
+
+p {
+  padding: 0.2rem;
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.review-list {
+  width: 350px;
+  margin: 0.5em;
+  background-color: #f2f2f2;
+  border-radius: 0.5rem;
+  background-color: #025159;
+  color: white;
+}
+
+.review-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +88,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
