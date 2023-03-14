@@ -41,12 +41,12 @@ p {
   line-height: 1.5em;
 }
 
-ul {
+/* ul {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   list-style: none;
-}
+} */
 
 img {
   width: 100%;
@@ -65,6 +65,13 @@ button {
 }
 
 .review-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.review-card {
   width: 350px;
   margin: 0.5em;
   background-color: #f2f2f2;

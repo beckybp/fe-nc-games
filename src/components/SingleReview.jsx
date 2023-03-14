@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
 import { convertCtreatedAt } from "../utils/utils";
+import { CommentList } from "./CommentList";
 
 export const SingleReview = () => {
   const [review, setReview] = useState({});
@@ -54,6 +55,7 @@ export const SingleReview = () => {
         <p>
           <b>Comment count:</b> {comment_count}
         </p>
+        <CommentList />
         <Link to="/">
           <button>Back to all reviews</button>
         </Link>

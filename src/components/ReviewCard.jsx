@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const ReviewCard = ({ review }) => {
   return (
-    <section className="review-list">
+    <section className="review-card">
       <li>
         <img
           className="review-img"
