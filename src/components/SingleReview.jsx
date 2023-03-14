@@ -33,15 +33,12 @@ export const SingleReview = () => {
     return <p>Loading...</p>;
   }
   if (!isLoading) {
-    const reviewCopy = { ...review };
-    const dateUpdated = convertCtreatedAt(reviewCopy.created_at);
-
     return (
       <section>
         <h2>{title}</h2>
         <img src={review_img_url} alt={title} />
         <h3>Review by: {owner}</h3>
-        <p>{dateUpdated}</p>
+        <p>{convertCtreatedAt(review.created_at)}</p>
         <p>
           <b>Category:</b> {category}
         </p>

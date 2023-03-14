@@ -16,18 +16,21 @@ export const CommentList = () => {
     });
   }, [review_id]);
 
-  return (
-    <section>
-      <h3>Comments</h3>
-      {isLoading ? (
-        <p>Loading reviews...</p>
-      ) : (
-        <ul>
-          {comments.map((comment) => {
-            return <CommentCard key={comment.comment_id} comment={comment} />;
-          })}
-        </ul>
-      )}
-    </section>
-  );
+  if (isLoading) {
+    return <p>Loading Reviews...</p>;
+  }
+  if (!isLoading) {
+    if (comments.length > 0) {
+      return (
+        <section id="comment-list">
+          <h3>Comments</h3>
+          <ul>
+            {comments.map((comment) => {
+              return <CommentCard key={comment.comment_id} comment={comment} />;
+            })}
+          </ul>
+        </section>
+      );
+    }
+  }
 };

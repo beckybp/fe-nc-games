@@ -11,8 +11,11 @@
 
 header {
   padding: 1rem;
+  background-color: #18d9b65e;
   color: #025159;
-  border-bottom: 2px solid #025159;
+}
+a:link {
+  text-decoration: none;
 }
 
 h1,
@@ -40,13 +43,6 @@ p {
   padding: 0.2rem;
   line-height: 1.5em;
 }
-
-/* ul {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  list-style: none;
-} */
 
 img {
   width: 100%;
@@ -87,12 +83,31 @@ button {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
+#comment-list {
+  background-color: #18d9b65e;
+  padding: 5px;
+}
+
+#comment-card {
+  background-color: #025159;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 8px;
+  list-style: none;
+  color: white;
+}
+
 @media (min-width: 1024px) {
   img {
     width: 40vw;
   }
 
   #p-review {
+    margin-left: 30vw;
+    margin-right: 30vw;
+  }
+
+  #comment-card {
     margin-left: 30vw;
     margin-right: 30vw;
   }
