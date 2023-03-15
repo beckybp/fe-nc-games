@@ -12,7 +12,7 @@ export const CommentAdder = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const commentObj = { username: "testUser", body: newComment };
+    const commentObj = { username: "jessjelly", body: newComment };
     postComment(review_id, commentObj);
     // .then((response) => {
     //   console.log(response);
