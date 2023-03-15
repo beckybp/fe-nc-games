@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
-import { convertCtreatedAt } from "../utils/utils";
+import { convertCreatedAt } from "../utils/utils";
 import { CommentList } from "./CommentList";
 
 export const SingleReview = () => {
@@ -38,7 +38,7 @@ export const SingleReview = () => {
         <h2>{title}</h2>
         <img src={review_img_url} alt={title} />
         <h3>Review by: {owner}</h3>
-        <p>{convertCtreatedAt(review.created_at)}</p>
+        <p>{convertCreatedAt(created_at)}</p>
         <p>
           <b>Category:</b> {category}
         </p>

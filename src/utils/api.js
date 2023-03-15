@@ -21,3 +21,14 @@ export const getComments = (review_id) => {
     return response.data.comments;
   });
 };
+
+export const postComment = (review_id, newComment) => {
+  return gamesApi
+    .post(`/reviews/${review_id}/comments`, newComment)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
