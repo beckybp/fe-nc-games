@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
 import { convertCtreatedAt } from "../utils/utils";
+import { CommentList } from "./CommentList";
 
 export const SingleReview = () => {
   const [review, setReview] = useState({});
@@ -32,15 +33,12 @@ export const SingleReview = () => {
     return <p>Loading...</p>;
   }
   if (!isLoading) {
-    const reviewCopy = { ...review };
-    const dateUpdated = convertCtreatedAt(reviewCopy.created_at);
-
     return (
       <section>
         <h2>{title}</h2>
         <img src={review_img_url} alt={title} />
         <h3>Review by: {owner}</h3>
-        <p>{dateUpdated}</p>
+        <p>{convertCtreatedAt(review.created_at)}</p>
         <p>
           <b>Category:</b> {category}
         </p>
@@ -54,6 +52,7 @@ export const SingleReview = () => {
         <p>
           <b>Comment count:</b> {comment_count}
         </p>
+        <CommentList />
         <Link to="/">
           <button>Back to all reviews</button>
         </Link>

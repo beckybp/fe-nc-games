@@ -20,11 +20,13 @@ export const ReviewList = () => {
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        <ul>
-          {reviews.map((review) => {
-            return <ReviewCard key={review.review_id} review={review} />;
-          })}
-        </ul>
+        <section>
+          <ul className="review-list">
+            {reviews.map((review) => {
+              return <ReviewCard key={review.review_id} review={review} />;
+            })}
+          </ul>
+        </section>
       )}
     </main>
   );
