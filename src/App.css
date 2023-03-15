@@ -14,6 +14,7 @@ header {
   background-color: #18d9b65e;
   color: #025159;
 }
+
 a:link {
   text-decoration: none;
 }
@@ -96,6 +97,10 @@ button {
   padding: 8px;
   list-style: none;
   color: white;
+}
+
+#error-text {
+  background-color: rgba(255, 0, 0, 0.184);
 }
 
 @media (min-width: 1024px) {
