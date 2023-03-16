@@ -22,7 +22,6 @@ export const getComments = (review_id) => {
   });
 };
 
-<<<<<<< HEAD
 export const postComment = (review_id, newComment) => {
   return gamesApi
     .post(`/reviews/${review_id}/comments`, newComment)
@@ -31,12 +30,13 @@ export const postComment = (review_id, newComment) => {
     })
     .catch((err) => {
       console.log(err);
-=======
+    });
+};
+
 export const patchVotes = (review_id, number) => {
   return gamesApi
     .patch(`/reviews/${review_id}`, { inc_votes: `${number}` })
     .then((response) => {
       return response.data.review.votes;
->>>>>>> fadf4f9174a4bee9a9bf53fc122fd3f4df00f05b
     });
 };
