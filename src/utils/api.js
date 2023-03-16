@@ -22,21 +22,21 @@ export const getComments = (review_id) => {
   });
 };
 
-export const postComment = (review_id, newComment) => {
-  return gamesApi
-    .post(`/reviews/${review_id}/comments`, newComment)
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-};
-
 export const patchVotes = (review_id, number) => {
   return gamesApi
     .patch(`/reviews/${review_id}`, { inc_votes: `${number}` })
     .then((response) => {
       return response.data.review.votes;
+    });
+};
+
+export const postComment = (review_id, newComment) => {
+  return gamesApi
+    .post(`/reviews/${review_id}/comments`, newComment)
+    .then((response) => {
+      return response.data.comment;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };

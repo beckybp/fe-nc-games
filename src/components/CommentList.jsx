@@ -21,18 +21,20 @@ export const CommentList = () => {
     return <p>Loading Reviews...</p>;
   }
   if (!isLoading) {
-    if (comments.length > 0) {
-      return (
-        <section id="comment-list">
-          <h3>Comments</h3>
-          <CommentAdder />
+    return (
+      <section id="comment-list">
+        <h3>Comments</h3>
+        <CommentAdder setComments={setComments} comments={comments} />
+        {comments.length > 0 ? (
           <ul>
             {comments.map((comment) => {
               return <CommentCard key={comment.comment_id} comment={comment} />;
             })}
           </ul>
-        </section>
-      );
-    }
+        ) : (
+          <p>no comments yet</p>
+        )}
+      </section>
+    );
   }
 };
