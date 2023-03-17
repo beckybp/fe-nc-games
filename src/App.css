@@ -138,6 +138,15 @@ button:disabled {
   border-radius: 10px;
 }
 
+#success-comment {
+  background-color: white;
+  color: green;
+  border: 1px solid #18d9b5;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 10px;
+}
+
 @media (min-width: 1024px) {
   img {
     width: 40vw;
