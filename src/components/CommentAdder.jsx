@@ -19,8 +19,8 @@ export const CommentAdder = ({ setComments, user }) => {
   const onSubmit = (event) => {
     event.preventDefault();
     validate(newComment.body);
-    if (formErr === null) {
-      console.log(formErr);
+
+    if (newComment.body.length > 0) {
       setLoadingComment("Comment loading");
       postComment(review_id, newComment).then((response) => {
         setComments((currentComments) => {
@@ -37,7 +37,7 @@ export const CommentAdder = ({ setComments, user }) => {
 
   const validate = (comment) => {
     if (comment.length === 0) {
-      setFormErr("Please add a comment");
+      setFormErr("Please add your comment");
     }
     if (comment.length > 0) {
       setFormErr(null);
@@ -53,7 +53,9 @@ export const CommentAdder = ({ setComments, user }) => {
         placeholder="Your comment here..."
         onChange={onChange}
       />
-      <p>{formErr}</p>
+      {formErr === "Please add your comment" ? (
+        <p id="error-comment">{formErr}</p>
+      ) : null}
       <button type="submit">Submit</button>
       {loadingComment === "Comment loading" ? <p>{loadingComment}</p> : null}
       {loadingComment === "Comment added" ? <p>{loadingComment}</p> : null}
