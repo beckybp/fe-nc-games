@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { postComment } from "../utils/api";
 
-export const CommentAdder = ({ setComments }) => {
+export const CommentAdder = ({ setComments, user }) => {
   const [newComment, setNewComment] = useState({
-    username: "jessjelly",
+    username: user,
     body: "",
   });
   const [loadingComment, setLoadingComment] = useState(null);
-  const isComment = newComment.body.length === 0;
+  const [formErr, setFormErr] = useState(null);
 
   const { review_id } = useParams();
 
@@ -18,32 +18,45 @@ export const CommentAdder = ({ setComments }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setLoadingComment("Comment loading");
-    postComment(review_id, newComment).then((response) => {
-      setComments((currentComments) => {
-        setLoadingComment("Comment added");
-        return [response, ...currentComments];
+    validate(newComment.body);
+    if (formErr === null) {
+      console.log(formErr);
+      setLoadingComment("Comment loading");
+      postComment(review_id, newComment).then((response) => {
+        setComments((currentComments) => {
+          setLoadingComment(null);
+          return [response, ...currentComments];
+        });
       });
-    });
-    // .catch(() => {
-    //   setErr("We didn't register that, please try again");
-    // });
-    setNewComment({
-      username: "jessjelly",
-      body: "",
-    });
+      setNewComment({
+        username: "jessjelly",
+        body: "",
+      });
+    }
+  };
+
+  const validate = (comment) => {
+    if (comment.length === 0) {
+      setFormErr("Please add a comment");
+    }
+    if (comment.length > 0) {
+      setFormErr(null);
+    }
   };
 
   return (
     <form onSubmit={onSubmit} className="form-style">
-      <label htmlFor="comment">Comment here:</label>
-      <textarea id="Comment" value={newComment.body} onChange={onChange} />
-      <button type="submit" disabled={isComment}>
-        Write your comment
-      </button>
+      <label htmlFor="comment">Write your comment:</label>
+      <textarea
+        id="Comment"
+        value={newComment.body}
+        placeholder="Your comment here..."
+        onChange={onChange}
+      />
+      <p>{formErr}</p>
+      <button type="submit">Submit</button>
       {loadingComment === "Comment loading" ? <p>{loadingComment}</p> : null}
       {loadingComment === "Comment added" ? <p>{loadingComment}</p> : null}
-      {/* {err ? <p>{err}</p> : null} */}
     </form>
   );
 };

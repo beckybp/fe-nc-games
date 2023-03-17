@@ -5,7 +5,7 @@ import { convertCreatedAt } from "../utils/utils";
 import { CommentList } from "./CommentList";
 import { Vote } from "./Vote";
 
-export const SingleReview = () => {
+export const SingleReview = ({ user }) => {
   const [review, setReview] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const { review_id } = useParams();
@@ -51,7 +51,7 @@ export const SingleReview = () => {
         <p>
           <b>Comment count:</b> {comment_count}
         </p>
-        <CommentList />
+        <CommentList user={user} />
         <Link to="/">
           <button>Back to all reviews</button>
         </Link>

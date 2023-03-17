@@ -4,7 +4,7 @@ import { getComments } from "../utils/api";
 import { CommentCard } from "./CommentCard";
 import { CommentAdder } from "./CommentAdder";
 
-export const CommentList = () => {
+export const CommentList = ({ user }) => {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { review_id } = useParams();
@@ -24,7 +24,11 @@ export const CommentList = () => {
     return (
       <section id="comment-list">
         <h3>Comments</h3>
-        <CommentAdder setComments={setComments} comments={comments} />
+        <CommentAdder
+          setComments={setComments}
+          comments={comments}
+          user={user}
+        />
         {comments.length > 0 ? (
           <ul>
             {comments.map((comment) => {
