@@ -2,36 +2,33 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { postComment } from "../utils/api";
 
-export const CommentAdder = ({ setComments, user }) => {
-  const [newComment, setNewComment] = useState({
-    username: user,
-    body: "",
-  });
+const user = "jessjelly";
+
+export const CommentAdder = ({ setComments }) => {
+  const [newComment, setNewComment] = useState("");
   const [loadingComment, setLoadingComment] = useState(null);
   const [formErr, setFormErr] = useState(null);
 
   const { review_id } = useParams();
 
   const onChange = (event) => {
-    setNewComment({ ...newComment, body: event.target.value });
+    setNewComment(event.target.value);
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
-    validate(newComment.body);
-
-    if (newComment.body.length > 0) {
+    validate(newComment);
+    if (newComment.length > 0) {
       setLoadingComment("Comment loading");
-      postComment(review_id, newComment).then((response) => {
-        setComments((currentComments) => {
-          setLoadingComment(null);
-          return [response, ...currentComments];
-        });
-      });
-      setNewComment({
-        username: "jessjelly",
-        body: "",
-      });
+      postComment(review_id, { username: user, body: newComment }).then(
+        (response) => {
+          setComments((currentComments) => {
+            setLoadingComment(null);
+            return [response, ...currentComments];
+          });
+        }
+      );
+      setNewComment("");
     }
   };
 
@@ -49,7 +46,7 @@ export const CommentAdder = ({ setComments, user }) => {
       <label htmlFor="comment">Write your comment:</label>
       <textarea
         id="Comment"
-        value={newComment.body}
+        value={newComment}
         placeholder="Your comment here..."
         onChange={onChange}
       />
