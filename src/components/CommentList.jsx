@@ -26,13 +26,11 @@ export const CommentList = ({ comment_count }) => {
     return (
       <section id="comment-list">
         <h3>Comments</h3>
-        <p>
-          <b>Comment count:</b> {comment_count + commentCount}
-        </p>
+        <h4>Comment count: {comment_count + commentCount}</h4>
         <PostComment
           setComments={setComments}
           setCommentCount={setCommentCount}
-        />
+        ></PostComment>
         {comments.length > 0 ? (
           <ul>
             {comments.map((comment) => {
