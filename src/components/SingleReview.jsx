@@ -48,10 +48,7 @@ export const SingleReview = () => {
         </p>
         <p id="p-review">{review_body}</p>
         <Vote votes={votes} />
-        <p>
-          <b>Comment count:</b> {comment_count}
-        </p>
-        <CommentList />
+        <CommentList comment_count={comment_count} />
         <Link to="/">
           <button>Back to all reviews</button>
         </Link>
