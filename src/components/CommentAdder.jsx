@@ -67,8 +67,16 @@ export const CommentAdder = ({ setComments, setCommentCount }) => {
       {formErr === "Please add your comment" ? (
         <p id="error-comment">{formErr}</p>
       ) : null}
-      {!loadingComment && <button type="submit">Submit</button>}
-      {loadingComment && <button disabled>Submitting...</button>}
+      {!loadingComment && (
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
+      )}
+      {loadingComment && (
+        <button disabled className="submit-button">
+          Submitting...
+        </button>
+      )}
       {postSuccess && <p id="success-comment">Success, post added</p>}
     </form>
   );
