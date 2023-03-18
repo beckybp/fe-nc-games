@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../utils/api";
 import { CommentCard } from "./CommentCard";
-import { CommentAdder } from "./CommentAdder";
+import { CommentAdder } from "./PostComment";
 
 export const CommentList = ({ comment_count }) => {
   const [comments, setComments] = useState([]);
