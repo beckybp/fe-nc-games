@@ -4,7 +4,7 @@ import { postComment } from "../utils/api";
 
 const user = "jessjelly";
 
-export const CommentAdder = ({ setComments, setCommentCount }) => {
+export const PostComment = ({ setComments, setCommentCount }) => {
   const [newComment, setNewComment] = useState("");
   const [loadingComment, setLoadingComment] = useState(false);
   const [formErr, setFormErr] = useState(null);

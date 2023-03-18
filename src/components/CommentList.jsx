@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getComments } from "../utils/api";
 import { CommentCard } from "./CommentCard";
-import { CommentAdder } from "./PostComment";
+import { PostComment } from "./PostComment";
 
 export const CommentList = ({ comment_count }) => {
   const [comments, setComments] = useState([]);
@@ -29,7 +29,7 @@ export const CommentList = ({ comment_count }) => {
         <p>
           <b>Comment count:</b> {comment_count + commentCount}
         </p>
-        <CommentAdder
+        <PostComment
           setComments={setComments}
           setCommentCount={setCommentCount}
         />
