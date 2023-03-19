@@ -45,6 +45,12 @@ p {
   line-height: 1.5em;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 img {
   width: 100%;
   border-radius: 0.5rem;
@@ -83,6 +89,30 @@ button {
   height: 200px;
   object-fit: cover;
   border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.nav-group {
+  background-color: #18d9b5;
+}
+
+.nav-link {
+  display: inline-block;
+  margin: 0.6em;
+  text-decoration: none;
+  font-size: 1em;
+  color: #ffffff;
+}
+
+.nav-group a {
+  color: #000000;
+}
+
+.nav-group a:hover {
+  border-bottom: 2px solid #000000;
+}
+
+.nav-group a:active {
+  border-bottom: 2px solid #dc1d1d;
 }
 
 #comment-list {

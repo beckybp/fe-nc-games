@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getCategories } from "../utils/api";
 
-export const CategorySelector = () => {
+export const CategoryNavBar = () => {
   const [categories, setCategories] = useState([]);
+  // const [activeCategory, setActiveCategory] = useState(["View All"]);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getCategories().then((categoriesFromApi) => {
@@ -11,12 +14,15 @@ export const CategorySelector = () => {
   }, [categories]);
 
   return (
-    <section>
+    <section className="nav-group">
       <ul>
+        <Link to="/" className="nav-link">
+          View all
+        </Link>
         {categories.map((category) => {
           return (
-            <li>
-              <p>{category.slug}</p>
+            <li className="nav-link">
+              <Link to={`/category/${category.slug}`}>{category.slug}</Link>
             </li>
           );
         })}
