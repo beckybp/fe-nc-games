@@ -12,6 +12,7 @@ function App() {
       </Link>
       <Routes>
         <Route path="/" element={<ReviewList />} />
+        <Route path="/category/:category" element={<ReviewList />} />
         <Route path="/reviews/:review_id" element={<SingleReview />} />
       </Routes>
     </div>
