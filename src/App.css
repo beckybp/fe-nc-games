@@ -91,10 +91,6 @@ button {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
-.nav-group {
-  background-color: #18d9b5;
-}
-
 .nav-link {
   display: inline-block;
   margin: 0.6em;

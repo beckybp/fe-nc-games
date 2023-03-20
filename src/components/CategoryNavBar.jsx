@@ -5,16 +5,19 @@ import { getCategories } from "../utils/api";
 export const CategoryNavBar = () => {
   const [categories, setCategories] = useState([]);
   // const [activeCategory, setActiveCategory] = useState(["View All"]);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     getCategories().then((categoriesFromApi) => {
       setCategories(categoriesFromApi);
+      setIsLoading(false);
     });
   }, [categories]);
 
   return (
     <section className="nav-group">
+      <h4>Filter by category:</h4>
       <ul>
         <Link to="/" className="nav-link">
           View all
