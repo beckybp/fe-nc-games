@@ -7,7 +7,7 @@ https://becky-pugh-nc-games.netlify.app/
 
 NC Games is a website where users can rate and review games.
 
-NC Games displays game reviews which are divided into categories that can be selected to filter the review results. Once selected, each review can be upvoted or downvoted using the API. A user can add comments to each review.
+NC Games displays a list of game reviews. Once selected, each review can be upvoted or downvoted using the API. A user can add comments to each review.
 
 ## Back-end
 
