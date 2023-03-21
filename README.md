@@ -11,7 +11,7 @@ NC Games displays game reviews which are divided into categories that can be sel
 
 ## Back-end
 
-- The Github repository created for the back-end, using Express and Postgres, can be found here:\
+- The Github repository for the back-end, using Express and Postgres, can be found here:\
   https://github.com/beckybp/be-nc-games\
 - The hosted back-end can be found here:\
   https://games-z0qy.onrender.com/api/reviews
