@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
-import { convertCtreatedAt } from "../utils/utils";
+import { convertCreatedAt } from "../utils/utils";
 import { CommentList } from "./CommentList";
 import { Vote } from "./Vote";
 
@@ -39,7 +39,7 @@ export const SingleReview = () => {
         <h2>{title}</h2>
         <img src={review_img_url} alt={title} />
         <h3>Review by: {owner}</h3>
-        <p>{convertCtreatedAt(created_at)}</p>
+        <p>{convertCreatedAt(created_at)}</p>
         <p>
           <b>Category:</b> {category}
         </p>
@@ -48,10 +48,7 @@ export const SingleReview = () => {
         </p>
         <p id="p-review">{review_body}</p>
         <Vote votes={votes} />
-        <p>
-          <b>Comment count:</b> {comment_count}
-        </p>
-        <CommentList />
+        <CommentList comment_count={comment_count} />
         <Link to="/">
           <button>Back to all reviews</button>
         </Link>

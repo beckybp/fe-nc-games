@@ -36,8 +36,9 @@ h2 {
   color: #025159;
 }
 
-h3 {
-  padding: 0.5rem;
+h3,
+h4 {
+  margin: 0.5rem;
 }
 
 p {
@@ -60,6 +61,10 @@ button {
   margin: 5px;
   cursor: pointer;
   font-size: 1em;
+}
+
+button:disabled {
+  cursor: default;
 }
 
 .review-list {
@@ -85,9 +90,38 @@ button {
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
+.form-style {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-style label {
+  text-align: center;
+  display: block;
+}
+
+.form-style textarea {
+  width: 100%;
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  border: 1px solid #025159;
+  border-radius: 0.5rem;
+  display: block;
+  height: 12vh;
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+.submit-button {
+  width: 130px;
+  border: 1px solid #025159;
+}
+
 #comment-list {
   background-color: #18d9b65e;
   padding: 5px;
+  margin-top: 15px;
 }
 
 #comment-card {
@@ -103,8 +137,28 @@ button {
   background-color: rgba(255, 0, 0, 0.184);
 }
 
+#error-comment {
+  color: red;
+  background-color: white;
+  padding: 5px;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+
+#success-comment {
+  background-color: white;
+  color: green;
+  border-radius: 0.5rem;
+  padding: 5px;
+  margin: 0 0.5rem;
+}
+
 @media (min-width: 1024px) {
   img {
+    width: 40vw;
+  }
+
+  .form-style {
     width: 40vw;
   }
 

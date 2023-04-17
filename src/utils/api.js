@@ -29,3 +29,14 @@ export const patchVotes = (review_id, number) => {
       return response.data.review.votes;
     });
 };
+
+export const postComment = (review_id, newComment) => {
+  return gamesApi
+    .post(`/reviews/${review_id}/comments`, newComment)
+    .then((response) => {
+      return response.data.comment;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
