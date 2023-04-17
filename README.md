@@ -14,7 +14,7 @@ NC Games displays a list of game reviews. Once selected, each review can be upvo
 - The Github repository for the back-end, using Express and Postgres, can be found here:\
   https://github.com/beckybp/be-nc-games\
 - The hosted back-end can be found here:\
-  https://games-z0qy.onrender.com/api/reviews
+  https://games-z0qy.onrender.com/api
 
 ## Minimum version of Node required
 
