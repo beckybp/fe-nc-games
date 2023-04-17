@@ -19,11 +19,11 @@ export const ReviewList = () => {
 
   return (
     <main>
+      <CategoryNavBar />
       {isLoading ? (
         <p>Loading...</p>
       ) : (
         <>
-          <CategoryNavBar />
           {category ? <h2>{category} reviews</h2> : <h2>All reviews</h2>}
           <section>
             <ul className="review-list">
