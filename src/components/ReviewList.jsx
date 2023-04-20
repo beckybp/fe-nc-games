@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
 import { ReviewCard } from "./ReviewCard";
-import { CategoryNavBar } from "./CategoryNavBar";
 
 export const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
@@ -19,7 +18,6 @@ export const ReviewList = () => {
 
   return (
     <main>
-      <CategoryNavBar />
       {isLoading ? (
         <p>Loading...</p>
       ) : (

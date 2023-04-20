@@ -99,6 +99,10 @@ button {
   color: #ffffff;
 }
 
+.nav-group {
+  background-color: #18d9b5;
+}
+
 .nav-group a {
   color: #000000;
 }
@@ -107,8 +111,8 @@ button {
   border-bottom: 2px solid #000000;
 }
 
-.nav-group a:active {
-  border-bottom: 2px solid #dc1d1d;
+.nav-group .active {
+  border-bottom: 2px solid #000000;
 }
 
 #comment-list {
