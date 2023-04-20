@@ -113,11 +113,11 @@ button:disabled {
 }
 
 .nav-group a:hover {
-  border-bottom: 2px solid #000000;
+  border-bottom: 1.5px solid #000000;
 }
 
 .nav-group .active {
-  border-bottom: 2px solid #000000;
+  border-bottom: 1.5px solid #000000;
 }
 
 .form-style {
