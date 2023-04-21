@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getSingleReview } from "../utils/api";
-import { convertCreatedAt } from "../utils/utils";
+import { convertCategories, convertCreatedAt } from "../utils/utils";
 import { CommentList } from "./CommentList";
 import { Vote } from "./Vote";
 
@@ -41,7 +41,7 @@ export const SingleReview = () => {
         <h3>Review by: {owner}</h3>
         <p>{convertCreatedAt(created_at)}</p>
         <p>
-          <b>Category:</b> {category}
+          <b>Category:</b> {convertCategories(category)}
         </p>
         <p>
           <b>Designer:</b> {designer}
