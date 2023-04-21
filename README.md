@@ -1,4 +1,4 @@
-# NC Games Review App README
+# Games Review App
 
 Please find a link to the deployed version here:\
 https://becky-pugh-nc-games.netlify.app/
