@@ -11,6 +11,8 @@ export const CategoryNavBar = () => {
     });
   }, []);
 
+  console.log(categories, "outside");
+
   return (
     <section className="nav-group">
       <nav>

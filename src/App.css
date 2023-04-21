@@ -118,6 +118,7 @@ button:disabled {
 
 .nav-group .active {
   border-bottom: 1.5px solid #000000;
+  padding-bottom: 2px;
 }
 
 .form-style {
