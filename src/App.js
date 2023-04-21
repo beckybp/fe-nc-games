@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/Header";
 import { ReviewList } from "./components/ReviewList";
 import { SingleReview } from "./components/SingleReview";
@@ -8,9 +8,7 @@ import { CategoryNavBar } from "./components/CategoryNavBar";
 function App() {
   return (
     <div className="App">
-      <Link to="/">
-        <Header />
-      </Link>
+      <Header />
       <CategoryNavBar />
       <Routes>
         <Route path="/" element={<ReviewList />} />
