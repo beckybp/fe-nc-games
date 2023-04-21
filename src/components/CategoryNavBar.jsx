@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getCategories } from "../utils/api";
 import { NavLink } from "react-router-dom";
+import { convertCategories } from "../utils/utils";
 
 export const CategoryNavBar = () => {
   const [categories, setCategories] = useState([]);
@@ -17,7 +18,7 @@ export const CategoryNavBar = () => {
     <section className="nav-group">
       <nav>
         <NavLink to="/" className="nav-link" key="view-all">
-          View all
+          View All
         </NavLink>
         {categories.map((category) => {
           return (
@@ -26,7 +27,7 @@ export const CategoryNavBar = () => {
               className="nav-link"
               key={category.slug}
             >
-              {category.slug}
+              {convertCategories(category.slug)}
             </NavLink>
           );
         })}

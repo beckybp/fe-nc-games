@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getReviews } from "../utils/api";
 import { ReviewCard } from "./ReviewCard";
+import { convertCategories } from "../utils/utils";
 
 export const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
@@ -22,7 +23,11 @@ export const ReviewList = () => {
         <p>Loading...</p>
       ) : (
         <>
-          {category ? <h2>{category} reviews</h2> : <h2>All reviews</h2>}
+          {category ? (
+            <h2>{convertCategories(category)} Reviews</h2>
+          ) : (
+            <h2>All Reviews</h2>
+          )}
           <section>
             <ul className="review-list">
               {reviews.map((review) => {
