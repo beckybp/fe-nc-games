@@ -19,28 +19,26 @@ export const CategoryNavBar = () => {
 
   if (!isLoading) {
     return (
-      <section>
-        <>
-          <h4>Filter by category:</h4>
-          <section className="nav-group">
-            <NavLink to="/" className="nav-link" key="view-all">
-              View All
-            </NavLink>
+      <>
+        <h4>Filter by category:</h4>
+        <section className="nav-group">
+          <NavLink to="/" className="nav-link" key="view-all">
+            View All
+          </NavLink>
 
-            {categories.map((category) => {
-              return (
-                <NavLink
-                  to={`/category/${category.slug}`}
-                  className="nav-link"
-                  key={category.slug}
-                >
-                  {convertCategories(category.slug)}
-                </NavLink>
-              );
-            })}
-          </section>
-        </>
-      </section>
+          {categories.map((category) => {
+            return (
+              <NavLink
+                to={`/category/${category.slug}`}
+                className="nav-link"
+                key={category.slug}
+              >
+                {convertCategories(category.slug)}
+              </NavLink>
+            );
+          })}
+        </section>
+      </>
     );
   }
 };

@@ -4,11 +4,14 @@ import { getReviews } from "../utils/api";
 import { ReviewCard } from "./ReviewCard";
 import { convertCategories } from "../utils/utils";
 import { CategoryNavBar } from "./CategoryNavBar";
+import { SortBy } from "./SortBy";
+import { OrderBy } from "./OrderBy";
 
 export const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { category } = useParams();
+  const [orderBy, setOrderBy] = useState("Desc");
 
   useEffect(() => {
     setIsLoading(true);
@@ -18,9 +21,13 @@ export const ReviewList = () => {
     });
   }, [category]);
 
+  console.log(orderBy);
+
   return (
     <main>
       <CategoryNavBar />
+      <SortBy />
+      <OrderBy setOrderBy={setOrderBy} />
       {isLoading ? (
         <p>Loading Reviews...</p>
       ) : (
