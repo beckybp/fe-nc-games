@@ -17,11 +17,9 @@ export const CategoryNavBar = () => {
 
   console.log(categories);
 
-  return (
-    <section>
-      {isLoading ? (
-        <p>Loading Categories...</p>
-      ) : (
+  if (!isLoading) {
+    return (
+      <section>
         <>
           <h4>Filter by category:</h4>
           <section className="nav-group">
@@ -42,26 +40,7 @@ export const CategoryNavBar = () => {
             })}
           </section>
         </>
-      )}
-    </section>
-  );
-
-  // return (
-  //   <>
-  //     <label htmlFor="category">Filter by Category:</label>
-  //     <select id="category" defaultValue="default">
-  //       <option value="default" key="no-select" disabled>
-  //         Select a category
-  //       </option>
-  //       <option key="view-all">All reviews</option>
-  //       {categories.map((category) => {
-  //         return (
-  //           <option value="category.slug">
-  //             {convertCategories(category.slug)}
-  //           </option>
-  //         );
-  //       })}
-  //     </select>
-  //   </>
-  // );
+      </section>
+    );
+  }
 };
