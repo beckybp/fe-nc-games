@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 
-export const SortBy = () => {
-  const [sortBy, setSortBy] = useState("Date");
+export const SortBy = ({ setSortBy }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const onChange = (event) => {
     setSortBy(event.target.value);
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("sort_by", event.target.value);
+    setSearchParams(newParams);
   };
-
-  console.log(sortBy);
 
   return (
     <>
@@ -16,11 +17,11 @@ export const SortBy = () => {
         id="reviewSorter"
         onChange={onChange}
         name="selectedSortOption"
-        defaultValue="Date"
+        defaultValue="created_at"
       >
-        <option value="Date">Date</option>
-        <option value="CommentCount">Comment Count</option>
-        <option value="Votes">Votes</option>
+        <option value="created_at">Date</option>
+        <option value="owner">User</option>
+        <option value="votes">Votes</option>
       </select>
     </>
   );

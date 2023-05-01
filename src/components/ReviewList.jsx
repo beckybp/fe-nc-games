@@ -10,23 +10,25 @@ import { OrderBy } from "./OrderBy";
 export const ReviewList = () => {
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [orderBy, setOrderBy] = useState("desc");
+  const [sortBy, setSortBy] = useState("created_at");
   const { category } = useParams();
-  const [orderBy, setOrderBy] = useState("Desc");
 
   useEffect(() => {
     setIsLoading(true);
-    getReviews(category).then((reviewsFromApi) => {
+    getReviews(category, sortBy, orderBy).then((reviewsFromApi) => {
+      console.log(reviewsFromApi);
       setReviews(reviewsFromApi);
       setIsLoading(false);
+      // console.log(orderBy);
+      // console.log(sortBy);
     });
-  }, [category]);
-
-  console.log(orderBy);
+  }, [category, orderBy, sortBy]);
 
   return (
     <main>
       <CategoryNavBar />
-      <SortBy />
+      <SortBy setSortBy={setSortBy} />
       <OrderBy setOrderBy={setOrderBy} />
       {isLoading ? (
         <p>Loading Reviews...</p>

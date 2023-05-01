@@ -1,6 +1,13 @@
-export const OrderBy = (setOrderBy) => {
+import { useSearchParams } from "react-router-dom";
+
+export const OrderBy = ({ setOrderBy }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const onChange = (event) => {
     setOrderBy(event.target.value);
+    const newParams = new URLSearchParams(searchParams);
+    newParams.set("order", event.target.value);
+    setSearchParams(newParams);
   };
 
   return (
@@ -10,10 +17,10 @@ export const OrderBy = (setOrderBy) => {
         id="reviewOrder"
         onChange={onChange}
         name="selectedOrder"
-        defaultValue="Desc"
+        defaultValue="desc"
       >
-        <option value="Desc">Descending</option>
-        <option value="Asc">Ascending</option>
+        <option value="desc">Descending</option>
+        <option value="asc">Ascending</option>
       </select>
     </>
   );

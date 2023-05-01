@@ -15,8 +15,6 @@ export const CategoryNavBar = () => {
     });
   }, []);
 
-  console.log(categories);
-
   if (!isLoading) {
     return (
       <>
