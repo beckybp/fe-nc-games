@@ -152,6 +152,21 @@ button:disabled {
   border: 1px solid #025159;
 }
 
+.user-img {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  object-fit: contain;
+}
+
+.user-cards {
+  background-color: #025159;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 500px;
+}
+
 #comment-list {
   background-color: #18d9b65e;
   padding: 5px;

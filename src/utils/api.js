@@ -25,6 +25,12 @@ export const getCategories = () => {
   });
 };
 
+export const getUsers = () => {
+  return gamesApi.get("/users").then((response) => {
+    return response.data.users;
+  });
+};
+
 export const getSingleReview = (review_id) => {
   return gamesApi.get(`/reviews/${review_id}`).then((response) => {
     return response.data.review;

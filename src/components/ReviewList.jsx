@@ -20,8 +20,6 @@ export const ReviewList = () => {
       console.log(reviewsFromApi);
       setReviews(reviewsFromApi);
       setIsLoading(false);
-      // console.log(orderBy);
-      // console.log(sortBy);
     });
   }, [category, orderBy, sortBy]);
 
