@@ -3,7 +3,7 @@
 Please find a link to the deployed version here:\
 https://becky-pugh-nc-games.netlify.app/
 
-## Information about the app
+## About
 
 NC Games is a website where users can rate and review games.
 
