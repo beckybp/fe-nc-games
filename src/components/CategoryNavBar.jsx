@@ -17,26 +17,32 @@ export const CategoryNavBar = () => {
 
   if (!isLoading) {
     return (
-      <>
-        <h4>Filter by category:</h4>
-        <section className="nav-group">
-          <NavLink to="/" className="nav-link" key="view-all">
-            View All
-          </NavLink>
+      <div id="category-filter-block">
+        <label htmlFor="category-filter" className="label">
+          Filter by category:
+        </label>
+        <ul className="nav-group" id="category-filter-select">
+          <li>
+            <NavLink to="/" className="nav-link" key="view-all">
+              View All
+            </NavLink>
+          </li>
 
           {categories.map((category) => {
             return (
-              <NavLink
-                to={`/category/${category.slug}`}
-                className="nav-link"
-                key={category.slug}
-              >
-                {convertCategories(category.slug)}
-              </NavLink>
+              <li>
+                <NavLink
+                  to={`/category/${category.slug}`}
+                  className="nav-link"
+                  key={category.slug}
+                >
+                  {convertCategories(category.slug)}
+                </NavLink>
+              </li>
             );
           })}
-        </section>
-      </>
+        </ul>
+      </div>
     );
   }
 };

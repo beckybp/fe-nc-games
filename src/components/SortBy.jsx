@@ -12,7 +12,9 @@ export const SortBy = ({ setSortBy }) => {
 
   return (
     <>
-      <label htmlFor="reviewSorter">Sort by:</label>
+      <label htmlFor="reviewSorter" className="label">
+        Sort by:
+      </label>
       <select
         id="reviewSorter"
         onChange={onChange}

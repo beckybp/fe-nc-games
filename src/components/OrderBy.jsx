@@ -12,7 +12,9 @@ export const OrderBy = ({ setOrderBy }) => {
 
   return (
     <>
-      <label htmlFor="reviewOrder">Order by:</label>
+      <label htmlFor="reviewOrder" className="label">
+        Order by:
+      </label>
       <select
         id="reviewOrder"
         onChange={onChange}
