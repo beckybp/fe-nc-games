@@ -12,6 +12,7 @@ export const ReviewList = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [orderBy, setOrderBy] = useState("desc");
   const [sortBy, setSortBy] = useState("created_at");
+  const [isNavBarLoading, setIsNavBarLoading] = useState(true);
   const { category } = useParams();
 
   useEffect(() => {
@@ -20,16 +21,21 @@ export const ReviewList = () => {
       console.log(reviewsFromApi);
       setReviews(reviewsFromApi);
       setIsLoading(false);
-      // console.log(orderBy);
-      // console.log(sortBy);
     });
   }, [category, orderBy, sortBy]);
 
   return (
     <main>
-      <CategoryNavBar />
-      <SortBy setSortBy={setSortBy} />
-      <OrderBy setOrderBy={setOrderBy} />
+      <CategoryNavBar
+        isNavBarLoading={isNavBarLoading}
+        setIsNavBarLoading={setIsNavBarLoading}
+      />
+      {!isNavBarLoading ? (
+        <>
+          <SortBy setSortBy={setSortBy} />
+          <OrderBy setOrderBy={setOrderBy} />
+        </>
+      ) : null}
       {isLoading ? (
         <p>Loading Reviews...</p>
       ) : (
