@@ -3,19 +3,18 @@ import { getCategories } from "../utils/api";
 import { NavLink } from "react-router-dom";
 import { convertCategories } from "../utils/utils";
 
-export const CategoryNavBar = () => {
+export const CategoryNavBar = ({ setIsNavBarLoading, isNavBarLoading }) => {
   const [categories, setCategories] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsNavBarLoading(true);
     getCategories().then((categoriesFromApi) => {
       setCategories(categoriesFromApi);
-      setIsLoading(false);
+      setIsNavBarLoading(false);
     });
-  }, []);
+  }, [setIsNavBarLoading]);
 
-  if (!isLoading) {
+  if (!isNavBarLoading) {
     return (
       <div id="category-filter-block">
         <label htmlFor="category-filter" className="label">
